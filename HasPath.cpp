@@ -13,18 +13,22 @@ bool haspath(int**graph,int n,int src,int dest)
     {
     	return true;
     }
+    // if current node or src has an edge connecting to destination just return true 
 	if(graph[src][dest]==1)
 	  {
 	  	return true;
 	  }
+       //if at above check no direct edge found just check on the adjacent vertices of source whether they are connected to destination or not
 	 for(int i=0;i<n;i++)
 	 {
 	 	if(visited.find(i)==visited.end() and graph[src][i]==1)
 	 	{
+			//calling on child vertices or adjacent vertices
 	 		return haspath(graph,n,i,dest);
 	 	}
 	 	
 	 }
+       //atlast return false means we dont have any path between the given src and dest,so we need to return false
 	 return false;
 }
 
@@ -55,6 +59,7 @@ int main()
      
     int source,dest;
     cin>>source>>dest;
+    
     if(haspath(graph,n,source,dest))
     {
     	cout<<"path Exists";

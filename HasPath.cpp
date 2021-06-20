@@ -31,8 +31,6 @@ bool haspath(int**graph,int n,int src,int dest)
        //atlast return false means we dont have any path between the given src and dest,so we need to return false
 	 return false;
 }
-
-
 int main()
 {
 	int n;
@@ -70,3 +68,13 @@ int main()
     }
 	
 }
+/*AN EXAMPLE
+5
+3
+0 1
+1 2
+3 4
+3 1
+
+Output:
+no path exists b/w these
